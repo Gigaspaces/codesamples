@@ -1,0 +1,6 @@
+terabyte-cluster-recipes are cloudify recipe examples used for terabyte GigaSpaces cluster tests. Here is the relevant blog post, blog.gigaspaces.com/2012/01/05/terabyte-elastic-cache-clusters-on-cisco-ucs-and-amazon-ec2/
+
+Three cloudify recipes are included,
+datagrid-ec2 - Used for ec2 tests
+datagrid-ucs - Used for Cisco UCS tests
+datagrid-local - Used for local machine tests
