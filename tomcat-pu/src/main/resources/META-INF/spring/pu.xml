@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:os-core="http://www.openspaces.org/schema/core" xmlns:os-events="http://www.openspaces.org/schema/events"
+	xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
+	xmlns:os-sla="http://www.openspaces.org/schema/sla"
+	xsi:schemaLocation="
+   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/core/openspaces-core.xsd
+   http://www.openspaces.org/schema/events http://www.openspaces.org/schema/events/openspaces-events.xsd
+   http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/remoting/openspaces-remoting.xsd
+   http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/sla/openspaces-sla.xsd">
+
+	<context:component-scan base-package="com.gigaspaces.tomcat"/>
+	
+	<bean id="tomcat7" class="com.gigaspaces.tomcat.Tomcat7">
+		<property name="appBase" value="/webapps" />
+		<property name="contextPath" value="/" />
+		<property name="port" value="8888" />
+		<property name="portRetries" value="10" />
+		<property name="webapps">
+			<array>
+				<bean class="com.gigaspaces.tomcat.Webapp">
+					<property name="name" value="examples" />
+					<property name="path" value="/examples" />
+				</bean>
+			</array>
+		</property>
+	</bean>
+
+
+</beans>
